@@ -15,7 +15,7 @@ namespace Tasks
             Console.Write("Enter any number : ");
             int number = int.Parse(Console.ReadLine());
 
-            for (i = number; number != 0; number = number / 10)
+            for (i = number; number != 0; number /= 10)
             {
                 var1 = number % 10;
                 sum = sum * 10 + var1;
