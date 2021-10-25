@@ -8,7 +8,7 @@ namespace Tasks
 {
     class Task10
     {
-        public static void Main(string[] args)
+        public static void Main10(string[] args)
         {
             int i, var1, sum = 0;
 
