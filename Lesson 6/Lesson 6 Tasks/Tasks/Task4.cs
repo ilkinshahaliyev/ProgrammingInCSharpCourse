@@ -10,12 +10,16 @@ namespace Tasks
     {
         static void Main(string[] args)
         {
-            ChangePlaceOfNumbers(6, 8);
+            ChangePlaceOfNumbers(7, 12);
         }
 
         static void ChangePlaceOfNumbers(int a, int b)
         {
-            Console.WriteLine("First number is {0}, second number is {1}", b, a);
+            a += b;
+            b = a - b;
+            a -= b;
+
+            Console.WriteLine($"The new value of a is {a}, the new value of b is {b}");
         }
     }
 }
