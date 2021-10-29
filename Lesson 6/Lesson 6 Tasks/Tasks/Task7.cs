@@ -8,7 +8,7 @@ namespace Tasks
 {
     class Task7
     {
-        static void Main(string[] args)
+        static void Main7(string[] args)
         {
             Console.Write("Enter any text : ");
             string text = Console.ReadLine();

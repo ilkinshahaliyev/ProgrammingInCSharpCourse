@@ -8,25 +8,14 @@ namespace Tasks
 {
     class Task4
     {
-        static void Main4(string[] args)
+        static void Main(string[] args)
         {
-            Console.Write("Enter number : ");
-            int num1 = Convert.ToInt32(Console.ReadLine());
-
-            Console.Write("Enter another number : ");
-            int num2 = Convert.ToInt32(Console.ReadLine());
-
-            ChangePlaceOfNumbers(num1, num2);
+            ChangePlaceOfNumbers(6, 8);
         }
 
-        static void ChangePlaceOfNumbers(params int[] numbers)
+        static void ChangePlaceOfNumbers(int a, int b)
         {
-            Array.Reverse(numbers);
-
-            foreach (var nums in numbers)
-            {
-                Console.Write("{0} ", nums);
-            }
+            Console.WriteLine("First number is {0}, second number is {1}", b, a);
         }
     }
 }
