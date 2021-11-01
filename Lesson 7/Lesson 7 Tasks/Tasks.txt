@@ -2,3 +2,5 @@
 2) https://www.hackerrank.com/challenges/plus-minus/submissions/code/240860784
 3) https://www.hackerrank.com/challenges/birthday-cake-candles/submissions/code/240863062
 4) https://www.hackerrank.com/challenges/day-of-the-programmer/submissions/code/240873310
+5) https://www.hackerrank.com/challenges/time-conversion/submissions/code/241000316
+6) https://www.hackerrank.com/challenges/staircase/submissions/code/241059432
