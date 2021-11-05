@@ -1,0 +1,3 @@
+1) https://www.hackerrank.com/challenges/divisible-sum-pairs/submissions/code/241612772
+2) https://www.hackerrank.com/challenges/kangaroo/submissions/code/241615059
+3) https://www.hackerrank.com/challenges/sock-merchant/submissions/code/241619904
