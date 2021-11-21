@@ -28,7 +28,12 @@ namespace Task3
 
                 Nationalize nationalize = JsonConvert.DeserializeObject<Nationalize>(result);
 
-                Console.WriteLine(nationalize.Name + " " + nationalize.Country + "\n");
+                Console.WriteLine(nationalize.Name + "\n");
+
+                foreach (var item in nationalize.Country)
+                {
+                    Console.WriteLine("Country name is : {0}, Probability is {1}.", item.CountryId, item.Probability);
+                }
 
                 Console.WriteLine("Do you want to continue ? true/false \n");
 
