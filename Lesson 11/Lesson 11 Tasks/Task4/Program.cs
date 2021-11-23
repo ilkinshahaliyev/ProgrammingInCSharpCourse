@@ -1,39 +1,29 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
 
 namespace Task4
 {
     internal class Program
     {
-        static async Task Main(string[] args)
+        static void Main(string[] args)
         {
-            bool isCountinue;
-
             const string ApiUrl = "https://dog.ceo/api/breeds/image/random";
+
+            string path = @"C:\Users\ilkin\Documents\DogImages";
 
             HttpClient httpClient = new HttpClient();
 
-            Console.WriteLine("Starting... \n");
+            var result = httpClient.GetStringAsync(ApiUrl).Result;
 
-            do
-            {
-                var result = await httpClient.GetStringAsync(ApiUrl);
+            var dogs = JsonConvert.DeserializeObject<Dogs>(result);
 
-                var dogs = JsonConvert.DeserializeObject<Dogs>(result);
+            WebClient photoClient = new WebClient();
 
-                Console.WriteLine(dogs.MessageLink + "\n");
+            Uri uri = new Uri(dogs.MessageLink);
 
-                Console.WriteLine("Do you want to continue ? true/false \n");
-
-                isCountinue = Convert.ToBoolean(Console.ReadLine());
-
-                Console.WriteLine();
-
-            } while (isCountinue);
-
-            Console.ReadKey();
+            photoClient.DownloadFile(uri, path + @"\photo.jpg");
         }
     }
 }
