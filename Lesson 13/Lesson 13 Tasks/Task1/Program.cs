@@ -20,6 +20,7 @@ namespace Task1
                     Console.WriteLine($"Drive name : {driveInfo.Name}" + "\n"
                         + $"Drive label : {driveInfo.VolumeLabel}" + "\n"
                         + $"Total size : {driveInfo.TotalSize / 1048576} MB" + "\n"
+                        + $"Used size : {(driveInfo.TotalSize - driveInfo.TotalFreeSpace) / 1048576} MB" + "\n"
                         + $"Total available free space : {driveInfo.AvailableFreeSpace / 1048576} MB" + "\n"
                         + $"Total free space : {driveInfo.TotalFreeSpace / 1048576} MB" + "\n"
                         + $"Drive Type : {driveInfo.DriveType}");
