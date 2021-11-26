@@ -15,6 +15,7 @@ namespace Task1
             {
                 if (driveInfo.DriveType == DriveType.Fixed)
                 {
+
                     countOfDisk++;
 
                     Console.WriteLine($"Drive name : {driveInfo.Name}" + "\n"
