@@ -22,7 +22,7 @@ namespace Task3
 
             cpuCounter.NextValue();
 
-            return cpuCounter.NextValue() + "%";
+            return cpuCounter.NextValue() + " %";
         }
     }
 }
