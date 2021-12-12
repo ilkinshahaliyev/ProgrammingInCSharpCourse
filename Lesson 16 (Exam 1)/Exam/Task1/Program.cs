@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Task1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -14,6 +14,7 @@ namespace Task1
             akif.Name = "Akif";
             akif.Surname = surname;
             akif.DateOfBirth = DateTime.Now.AddYears(-100);
+            akif.ParentPerson = null;
 
             var semed = new Person();
             semed.Id = 2;
@@ -180,13 +181,56 @@ namespace Task1
             personList.Add(ibrahim);
             personList.Add(vuqar);
 
+            //Find grandparent of person
+            Console.Write("Enter person id for to find this person's grandfather : ");
+            int number = int.Parse(Console.ReadLine());
+
             foreach (var person in personList)
             {
-                Console.WriteLine("Id is : {0}, name is : {1}, surname is : {2}," +
-                    " date of birth is : {3}, Child persons is : {4}," +
-                    " parent person is : {5}\n",
-                    person.Id, person.Name, person.Surname, person.DateOfBirth.ToString("dd.MM.yyyy"), 
-                    person.ChildPerson, person.ParentPerson);
+                if (number == person.Id)
+                {
+                    if ((person.ParentPerson != null) && (person.ParentPerson.ParentPerson != null))
+                    {
+                        Console.WriteLine("The grandparent of {0} is {1}", person.Name, person.ParentPerson.ParentPerson.Name);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Grandparent is not found.");
+                        break;
+                    }
+                }
+            }
+
+            Console.ReadLine();
+
+            //Find 4th generation of childs of person
+            Console.Write("Enter person id for to find 4th generation of childs of person : ");
+            int number2 = int.Parse(Console.ReadLine());
+
+            foreach (var person in personList)
+            {
+                if (number2 == person.Id)
+                {
+                    if (person.ChildPerson.Count != 0)
+                    {
+                        foreach (var child in person.ChildPerson)
+                        {
+                            if (child.ChildPerson.Count != 0)
+                            {
+                                foreach (var secondGenChild in child.ChildPerson)
+                                {
+                                    if (secondGenChild.ChildPerson.Count != 0)
+                                    {
+                                        foreach (var thirthGenChild in secondGenChild.ChildPerson)
+                                        {
+                                            Console.WriteLine($"The 4th generation of childs of {person.Name} Id is {thirthGenChild.Name}");
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
 
             Console.ReadKey();
