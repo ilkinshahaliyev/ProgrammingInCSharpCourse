@@ -11,5 +11,10 @@ namespace Task1
         public DateTime DateOfBirth { get; set; }
         public List<Person> ChildPerson { get; set; }
         public Person ParentPerson { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id} {Name} {Surname} {DateOfBirth:dd.MM.yyyy} {ChildPerson} {ParentPerson}";
+        }
     }
 }

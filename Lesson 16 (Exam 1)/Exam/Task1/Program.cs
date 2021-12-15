@@ -235,5 +235,11 @@ namespace Task1
 
             Console.ReadKey();
         }
+
+        static void AddPersonToList(Person person)
+        {
+            List<Person> personList = new List<Person>();
+            personList.Add(person);
+        }
     }
 }
