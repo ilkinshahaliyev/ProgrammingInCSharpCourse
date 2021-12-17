@@ -7,8 +7,6 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            User user = new User();
-
             User ilkin = new User
             {
                 Name = "Ilkin",
@@ -80,56 +78,56 @@ namespace Task1
                 Country = "Turkey"
             };
 
-            user.AddUserToList(ilkin);
-            user.AddUserToList(nurlan);
-            user.AddUserToList(shahali);
-            user.AddUserToList(ahmet);
-            user.AddUserToList(emre);
-            user.AddUserToList(ehmed);
-            user.AddUserToList(mark);
-            user.AddUserToList(cemil);
-            user.AddUserToList(akif);
-            user.AddUserToList(cihan);
+            UserManager userManager = new UserManager();
+            userManager.AddUser(ilkin);
+            userManager.AddUser(nurlan);
+            userManager.AddUser(shahali);
+            userManager.AddUser(ahmet);
+            userManager.AddUser(emre);
+            userManager.AddUser(ehmed);
+            userManager.AddUser(mark);
+            userManager.AddUser(cemil);
+            userManager.AddUser(akif);
+            userManager.AddUser(cihan);
 
-            Console.WriteLine("All users : \n");
+            var userList = userManager.GetAllUsers();
 
-            var a = user.GetAllUsers();
+            var listResult = GetListAsString(userList);
 
-            var result = GetListAsString(a);
-            Console.WriteLine(result);
+            Console.WriteLine(listResult);
 
-            Console.WriteLine("-----------");
+            Console.WriteLine("--------------");
 
-            Console.WriteLine("Users that age is greater than 20 : \n");
+            var conditionList = userManager.GetUserAgeGreaterThan20();
 
-            var b = user.GetUsersAgeGreaterThan20();
-            var result2 = GetListAsString(b);
-            Console.WriteLine(result2);
+            var conditionResult = GetListAsString(conditionList);
 
-            Console.WriteLine("-----------");
+            Console.WriteLine(conditionResult);
 
-            Console.WriteLine("Remove from list users that country is belongs to Turkey and age is lower than 10 : \n");
+            Console.WriteLine("--------------");
 
-            var c = user.GetUsersThatBelongsTurkeyAndAgeLowerThan10();
-            var result3 = GetListAsString(c);
-            Console.WriteLine(result3);
+            var conditionList2 = userManager.RemoveAllUsersCountryIsTurkeyAgeLowerThan10();
+
+            var conditionResult2 = GetListAsString(conditionList2);
+
+            Console.WriteLine(conditionResult2);
 
             Console.ReadKey();
         }
 
-        public static string GetListAsString(List<User> list)
+        public static string GetListAsString(List<User> userList)
         {
-            var str = string.Empty;
+            string listString = string.Empty;
 
-            foreach (var user in list)
+            foreach (var user in userList)
             {
-                str += user.Name + " " + user.Surname + " " + user.Age + " " + user.Country + ", ";
+                listString += $"{user.Name} {user.Surname} {user.Age} {user.Country}, ";
             }
 
-            str = str.TrimEnd(' ');
-            str = str.TrimEnd(',');
+            listString = listString.Trim(' ');
+            listString = listString.Trim(',');
 
-            return str;
+            return listString;
         }
     }
 }
