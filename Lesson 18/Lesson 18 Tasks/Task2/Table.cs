@@ -26,27 +26,15 @@ namespace Task2
 
         public Guest this[int index]
         {
-            get
-            {
-                return Guests[index];
-            }
+            get => Guests[index];
 
-            set
-            {
-                Guests[index] = value;
-            }
+            set => Guests[index] = value;
         }
 
         public Guest this[int index, string name]
         {
-            get
-            {
-                return Guests.Where(guest => guest.Name == name).First();
-            }
-            set
-            {
-                Guests[index] = value;
-            }
+            get => Guests.Where(guest => guest.Name == name).First();
+            set => Guests[index] = value;
         }
     }
 }
