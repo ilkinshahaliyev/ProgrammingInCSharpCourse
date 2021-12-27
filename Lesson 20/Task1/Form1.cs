@@ -13,8 +13,6 @@ namespace Task1
 {
     public partial class Form1 : Form
     {
-        string path = @"C:\Users\ilkin\Documents\Students\";
-
         public Form1()
         {
             InitializeComponent();
@@ -27,6 +25,8 @@ namespace Task1
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            string path = @"C:\Users\ilkin\Documents\Students\";
+
             Student student = new Student
             {
                 Id = int.Parse(txtId.Text),
@@ -54,6 +54,8 @@ namespace Task1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            string path = @"C:\Users\ilkin\Documents\Students\";
+
             Student student = new Student
             {
                 Id = int.Parse(txtId.Text),
@@ -76,6 +78,8 @@ namespace Task1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            string path = @"C:\Users\ilkin\Documents\Students\";
+
             path += $"{txtIdDelete.Text}.txt";
 
             File.Delete(path);
