@@ -207,6 +207,7 @@
             // 
             // btnRead
             // 
+            this.btnRead.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRead.Location = new System.Drawing.Point(265, 238);
             this.btnRead.Name = "btnRead";
             this.btnRead.Size = new System.Drawing.Size(75, 23);
@@ -229,7 +230,7 @@
             // btnExit
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Location = new System.Drawing.Point(897, 538);
+            this.btnExit.Location = new System.Drawing.Point(897, 531);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 16;
@@ -282,7 +283,7 @@
             this.listBox1.ItemHeight = 15;
             this.listBox1.Location = new System.Drawing.Point(12, 302);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(879, 259);
+            this.listBox1.Size = new System.Drawing.Size(960, 214);
             this.listBox1.TabIndex = 18;
             // 
             // Form1
@@ -290,7 +291,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 571);
+            this.ClientSize = new System.Drawing.Size(984, 566);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBoxDelete);
             this.Controls.Add(this.btnExit);
