@@ -18,10 +18,10 @@ namespace Task1
 
         public override string ToString()
         {
-            return $"Student id : {Id}, Student name : {Name}, " +
-                $"Student surname : {Surname}, Student bithdate : {DateOfBirth:dd.MM.yyyy}, " +
-                $"Student nationality : {Nationality}, Student gender : {Gender}, " +
-                $"Student adress : {Adress}.";
+            return $"Id : {Id}, name : {Name}, " +
+                $"surname : {Surname}, bithdate : {DateOfBirth:dd.MM.yyyy}, " +
+                $"nationality : {Nationality}, gender : {Gender}, " +
+                $"adress : {Adress}.";
         }
     }
 }

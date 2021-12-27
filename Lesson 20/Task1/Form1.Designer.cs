@@ -44,12 +44,14 @@
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.groupBoxRegistration = new System.Windows.Forms.GroupBox();
+            this.btnRead = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.groupBoxDelete = new System.Windows.Forms.GroupBox();
             this.btnDelete = new System.Windows.Forms.Button();
             this.txtIdDelete = new System.Windows.Forms.TextBox();
             this.lblIdDelete = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBoxRegistration.SuspendLayout();
             this.groupBoxDelete.SuspendLayout();
             this.SuspendLayout();
@@ -179,6 +181,7 @@
             // 
             // groupBoxRegistration
             // 
+            this.groupBoxRegistration.Controls.Add(this.btnRead);
             this.groupBoxRegistration.Controls.Add(this.btnUpdate);
             this.groupBoxRegistration.Controls.Add(this.btnCreate);
             this.groupBoxRegistration.Controls.Add(this.lblId);
@@ -202,6 +205,16 @@
             this.groupBoxRegistration.TabStop = false;
             this.groupBoxRegistration.Text = "User registiration";
             // 
+            // btnRead
+            // 
+            this.btnRead.Location = new System.Drawing.Point(265, 238);
+            this.btnRead.Name = "btnRead";
+            this.btnRead.Size = new System.Drawing.Size(75, 23);
+            this.btnRead.TabIndex = 16;
+            this.btnRead.Text = "Read";
+            this.btnRead.UseVisualStyleBackColor = true;
+            this.btnRead.Click += new System.EventHandler(this.btnRead_Click);
+            // 
             // btnUpdate
             // 
             this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -216,7 +229,7 @@
             // btnExit
             // 
             this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Location = new System.Drawing.Point(897, 273);
+            this.btnExit.Location = new System.Drawing.Point(897, 538);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 16;
@@ -263,12 +276,22 @@
             this.lblIdDelete.TabIndex = 0;
             this.lblIdDelete.Text = "Enter Id :";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 15;
+            this.listBox1.Location = new System.Drawing.Point(12, 302);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(879, 259);
+            this.listBox1.TabIndex = 18;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(984, 308);
+            this.ClientSize = new System.Drawing.Size(984, 571);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBoxDelete);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.groupBoxRegistration);
@@ -310,5 +333,7 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TextBox txtIdDelete;
         private System.Windows.Forms.Label lblIdDelete;
+        private System.Windows.Forms.Button btnRead;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

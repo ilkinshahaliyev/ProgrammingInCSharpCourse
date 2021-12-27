@@ -43,6 +43,8 @@ namespace Task1
             var content = student.ToString();
 
             File.AppendAllText(path, content);
+
+            MessageBox.Show("Student creating successfully.");
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -68,6 +70,8 @@ namespace Task1
             var content = student.ToString();
 
             File.WriteAllText(path, content);
+
+            MessageBox.Show("Student updating successfully.");
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -75,6 +79,20 @@ namespace Task1
             path += $"{txtIdDelete.Text}.txt";
 
             File.Delete(path);
+
+            MessageBox.Show("Student deleting successfully.");
+        }
+
+        private void btnRead_Click(object sender, EventArgs e)
+        {
+            string[] files = Directory.GetFiles(@"C:\Users\ilkin\Documents\Students");
+
+            for (int i = 0; i < files.Length; i++)
+            {
+                listBox1.Items.Add(File.ReadAllText(files[i]));
+            }
+
+            MessageBox.Show("Reading operation successfully.");
         }
     }
 }
