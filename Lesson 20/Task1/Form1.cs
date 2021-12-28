@@ -13,6 +13,8 @@ namespace Task1
 {
     public partial class Form1 : Form
     {
+        readonly string path = @"C:\Users\ilkin\Documents\Students\";
+
         public Form1()
         {
             InitializeComponent();
@@ -25,8 +27,6 @@ namespace Task1
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\ilkin\Documents\Students\";
-
             Student student = new Student
             {
                 Id = int.Parse(txtId.Text),
@@ -38,11 +38,9 @@ namespace Task1
                 Adress = txtAdress.Text
             };
 
-            path += $"{txtId.Text}.txt";
-
             var content = student.ToString();
 
-            File.AppendAllText(path, content);
+            File.AppendAllText(path + $"{txtId.Text}.txt", content);
 
             MessageBox.Show("Student creating successfully.");
         }
@@ -54,8 +52,6 @@ namespace Task1
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\ilkin\Documents\Students\";
-
             Student student = new Student
             {
                 Id = int.Parse(txtId.Text),
@@ -67,22 +63,16 @@ namespace Task1
                 Adress = txtAdress.Text
             };
 
-            path += $"{txtId.Text}.txt";
-
             var content = student.ToString();
 
-            File.WriteAllText(path, content);
+            File.WriteAllText(path + $"{txtId.Text}.txt", content);
 
             MessageBox.Show("Student updating successfully.");
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string path = @"C:\Users\ilkin\Documents\Students\";
-
-            path += $"{txtIdDelete.Text}.txt";
-
-            File.Delete(path);
+            File.Delete(path + $"{txtIdDelete.Text}.txt");
 
             MessageBox.Show("Student deleting successfully.");
         }
