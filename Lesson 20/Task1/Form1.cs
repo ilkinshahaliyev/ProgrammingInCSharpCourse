@@ -29,18 +29,18 @@ namespace Task1
         {
             Student student = new Student
             {
-                Id = int.Parse(txtId.Text),
+                Id = (int)numericUpDownId.Value,
                 Name = txtName.Text,
                 Surname = txtSurname.Text,
-                DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text),
+                DateOfBirth = Convert.ToDateTime(dtpDateOfBirth.Text),
                 Nationality = txtNationality.Text,
-                Gender = txtGender.Text,
+                Gender = comboBoxGender.Text,
                 Adress = txtAdress.Text
             };
 
             var content = student.ToString();
 
-            File.AppendAllText(path + $"{txtId.Text}.txt", content);
+            File.AppendAllText(path + $"{numericUpDownId.Value}.txt", content);
 
             MessageBox.Show("Student creating successfully.");
         }
@@ -54,18 +54,18 @@ namespace Task1
         {
             Student student = new Student
             {
-                Id = int.Parse(txtId.Text),
+                Id = int.Parse(numericUpDownId.Text),
                 Name = txtName.Text,
                 Surname = txtSurname.Text,
-                DateOfBirth = Convert.ToDateTime(txtDateOfBirth.Text),
+                DateOfBirth = Convert.ToDateTime(dtpDateOfBirth.Text),
                 Nationality = txtNationality.Text,
-                Gender = txtGender.Text,
+                Gender = comboBoxGender.Text,
                 Adress = txtAdress.Text
             };
 
             var content = student.ToString();
 
-            File.WriteAllText(path + $"{txtId.Text}.txt", content);
+            File.WriteAllText(path + $"{numericUpDownId.Text}.txt", content);
 
             MessageBox.Show("Student updating successfully.");
         }

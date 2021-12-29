@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.comboBoxGender = new System.Windows.Forms.ComboBox();
             this.lblId = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
@@ -35,15 +36,14 @@
             this.lblNationality = new System.Windows.Forms.Label();
             this.lblGender = new System.Windows.Forms.Label();
             this.lblAdress = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
-            this.txtDateOfBirth = new System.Windows.Forms.TextBox();
             this.txtNationality = new System.Windows.Forms.TextBox();
-            this.txtGender = new System.Windows.Forms.TextBox();
             this.txtAdress = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.groupBoxRegistration = new System.Windows.Forms.GroupBox();
+            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.numericUpDownId = new System.Windows.Forms.NumericUpDown();
             this.btnRead = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
@@ -53,8 +53,20 @@
             this.lblIdDelete = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBoxRegistration.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).BeginInit();
             this.groupBoxDelete.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // comboBoxGender
+            // 
+            this.comboBoxGender.FormattingEnabled = true;
+            this.comboBoxGender.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.comboBoxGender.Location = new System.Drawing.Point(135, 168);
+            this.comboBoxGender.Name = "comboBoxGender";
+            this.comboBoxGender.Size = new System.Drawing.Size(205, 23);
+            this.comboBoxGender.TabIndex = 19;
             // 
             // lblId
             // 
@@ -119,53 +131,32 @@
             this.lblAdress.TabIndex = 6;
             this.lblAdress.Text = "Enter adress :";
             // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(135, 23);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(162, 23);
-            this.txtId.TabIndex = 7;
-            // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(135, 52);
+            this.txtName.Location = new System.Drawing.Point(135, 51);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(162, 23);
+            this.txtName.Size = new System.Drawing.Size(205, 23);
             this.txtName.TabIndex = 8;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(135, 81);
+            this.txtSurname.Location = new System.Drawing.Point(135, 80);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(162, 23);
+            this.txtSurname.Size = new System.Drawing.Size(205, 23);
             this.txtSurname.TabIndex = 9;
-            // 
-            // txtDateOfBirth
-            // 
-            this.txtDateOfBirth.Location = new System.Drawing.Point(135, 110);
-            this.txtDateOfBirth.Name = "txtDateOfBirth";
-            this.txtDateOfBirth.Size = new System.Drawing.Size(162, 23);
-            this.txtDateOfBirth.TabIndex = 10;
             // 
             // txtNationality
             // 
             this.txtNationality.Location = new System.Drawing.Point(135, 139);
             this.txtNationality.Name = "txtNationality";
-            this.txtNationality.Size = new System.Drawing.Size(162, 23);
+            this.txtNationality.Size = new System.Drawing.Size(205, 23);
             this.txtNationality.TabIndex = 11;
-            // 
-            // txtGender
-            // 
-            this.txtGender.Location = new System.Drawing.Point(135, 168);
-            this.txtGender.Name = "txtGender";
-            this.txtGender.Size = new System.Drawing.Size(162, 23);
-            this.txtGender.TabIndex = 12;
             // 
             // txtAdress
             // 
             this.txtAdress.Location = new System.Drawing.Point(135, 197);
             this.txtAdress.Name = "txtAdress";
-            this.txtAdress.Size = new System.Drawing.Size(162, 23);
+            this.txtAdress.Size = new System.Drawing.Size(205, 23);
             this.txtAdress.TabIndex = 13;
             // 
             // btnCreate
@@ -181,29 +172,43 @@
             // 
             // groupBoxRegistration
             // 
+            this.groupBoxRegistration.Controls.Add(this.comboBoxGender);
+            this.groupBoxRegistration.Controls.Add(this.dtpDateOfBirth);
+            this.groupBoxRegistration.Controls.Add(this.numericUpDownId);
             this.groupBoxRegistration.Controls.Add(this.btnRead);
             this.groupBoxRegistration.Controls.Add(this.btnUpdate);
             this.groupBoxRegistration.Controls.Add(this.btnCreate);
             this.groupBoxRegistration.Controls.Add(this.lblId);
             this.groupBoxRegistration.Controls.Add(this.txtAdress);
             this.groupBoxRegistration.Controls.Add(this.lblName);
-            this.groupBoxRegistration.Controls.Add(this.txtGender);
             this.groupBoxRegistration.Controls.Add(this.lblSurname);
             this.groupBoxRegistration.Controls.Add(this.txtNationality);
             this.groupBoxRegistration.Controls.Add(this.lblDateOfBirth);
-            this.groupBoxRegistration.Controls.Add(this.txtDateOfBirth);
             this.groupBoxRegistration.Controls.Add(this.lblNationality);
             this.groupBoxRegistration.Controls.Add(this.txtSurname);
             this.groupBoxRegistration.Controls.Add(this.lblGender);
             this.groupBoxRegistration.Controls.Add(this.txtName);
             this.groupBoxRegistration.Controls.Add(this.lblAdress);
-            this.groupBoxRegistration.Controls.Add(this.txtId);
             this.groupBoxRegistration.Location = new System.Drawing.Point(12, 12);
             this.groupBoxRegistration.Name = "groupBoxRegistration";
             this.groupBoxRegistration.Size = new System.Drawing.Size(502, 284);
             this.groupBoxRegistration.TabIndex = 15;
             this.groupBoxRegistration.TabStop = false;
             this.groupBoxRegistration.Text = "User registiration";
+            // 
+            // dtpDateOfBirth
+            // 
+            this.dtpDateOfBirth.Location = new System.Drawing.Point(135, 109);
+            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(205, 23);
+            this.dtpDateOfBirth.TabIndex = 18;
+            // 
+            // numericUpDownId
+            // 
+            this.numericUpDownId.Location = new System.Drawing.Point(135, 22);
+            this.numericUpDownId.Name = "numericUpDownId";
+            this.numericUpDownId.Size = new System.Drawing.Size(205, 23);
+            this.numericUpDownId.TabIndex = 17;
             // 
             // btnRead
             // 
@@ -304,6 +309,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBoxRegistration.ResumeLayout(false);
             this.groupBoxRegistration.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
             this.groupBoxDelete.ResumeLayout(false);
             this.groupBoxDelete.PerformLayout();
             this.ResumeLayout(false);
@@ -319,12 +325,9 @@
         private System.Windows.Forms.Label lblNationality;
         private System.Windows.Forms.Label lblGender;
         private System.Windows.Forms.Label lblAdress;
-        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSurname;
-        private System.Windows.Forms.TextBox txtDateOfBirth;
         private System.Windows.Forms.TextBox txtNationality;
-        private System.Windows.Forms.TextBox txtGender;
         private System.Windows.Forms.TextBox txtAdress;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.GroupBox groupBoxRegistration;
@@ -336,5 +339,8 @@
         private System.Windows.Forms.Label lblIdDelete;
         private System.Windows.Forms.Button btnRead;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ComboBox comboBoxGender;
+        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
+        private System.Windows.Forms.NumericUpDown numericUpDownId;
     }
 }
