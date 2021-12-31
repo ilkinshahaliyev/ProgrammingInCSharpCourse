@@ -38,7 +38,7 @@ namespace Task1
             {
                 student.Gender = radioButtonMale.Text;
             }
-            else if(radioButtonFemale.Checked == true)
+            else if (radioButtonFemale.Checked == true)
             {
                 student.Gender = radioButtonFemale.Text;
             }
@@ -105,12 +105,21 @@ namespace Task1
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int id = (int)dgwStudents.CurrentRow.Cells[0].Value;
-            _studentManager.Delete(id);
+            var a = MessageBox.Show("Are you sure?", "Delete student", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
-            LoadStudents();
+            if (a == DialogResult.Yes)
+            {
+                int id = (int)dgwStudents.CurrentRow.Cells[0].Value;
+                _studentManager.Delete(id);
 
-            MessageBox.Show("Student deleted successfully!");
+                LoadStudents();
+
+                MessageBox.Show("Student deleted successfully!");
+            }
+            else
+            {
+                MessageBox.Show("No students were deleted.");
+            }
         }
 
         private void btnClearForm_Click(object sender, EventArgs e)
@@ -131,6 +140,27 @@ namespace Task1
             radioButtonFemale.Checked = false;
             radioButtonMaleUpdate.Checked = false;
             radioButtonFemaleUpdate.Checked = false;
+        }
+
+        private void ListStudentByName(string key)
+        {
+            var listedStudents = _studentManager.GetAll();
+
+            dgwStudents.DataSource = listedStudents.Where(s=>s.Name?.ToLower() == key.ToLower()).ToList();
+        }
+
+        private void tbxSearch_TextChanged(object sender, EventArgs e)
+        {
+            string key = tbxSearch.Text;
+
+            if (string.IsNullOrEmpty(key))
+            {
+                LoadStudents();
+            }
+            else
+            {
+                ListStudentByName(tbxSearch.Text);
+            }
         }
     }
 }

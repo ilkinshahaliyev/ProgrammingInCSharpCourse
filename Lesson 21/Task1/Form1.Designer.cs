@@ -70,6 +70,8 @@
             this.groupBoxClearForm = new System.Windows.Forms.GroupBox();
             this.lblİnfo1 = new System.Windows.Forms.Label();
             this.btnClearForm = new System.Windows.Forms.Button();
+            this.lblSearchInfo = new System.Windows.Forms.Label();
+            this.tbxSearch = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgwStudents)).BeginInit();
             this.groupBoxAddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).BeginInit();
@@ -84,7 +86,7 @@
             this.dgwStudents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgwStudents.BackgroundColor = System.Drawing.Color.LightYellow;
             this.dgwStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgwStudents.Location = new System.Drawing.Point(10, 10);
+            this.dgwStudents.Location = new System.Drawing.Point(10, 53);
             this.dgwStudents.Margin = new System.Windows.Forms.Padding(1);
             this.dgwStudents.Name = "dgwStudents";
             this.dgwStudents.RowTemplate.Height = 25;
@@ -113,7 +115,7 @@
             this.groupBoxAddStudent.Controls.Add(this.lblSurname);
             this.groupBoxAddStudent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBoxAddStudent.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBoxAddStudent.Location = new System.Drawing.Point(10, 368);
+            this.groupBoxAddStudent.Location = new System.Drawing.Point(10, 411);
             this.groupBoxAddStudent.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxAddStudent.Name = "groupBoxAddStudent";
             this.groupBoxAddStudent.Padding = new System.Windows.Forms.Padding(4);
@@ -299,7 +301,7 @@
             this.groupBoxUpdateStudent.Controls.Add(this.lblDateOfBirthUpdate);
             this.groupBoxUpdateStudent.Controls.Add(this.lblSurnameUpdate);
             this.groupBoxUpdateStudent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxUpdateStudent.Location = new System.Drawing.Point(449, 368);
+            this.groupBoxUpdateStudent.Location = new System.Drawing.Point(449, 411);
             this.groupBoxUpdateStudent.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxUpdateStudent.Name = "groupBoxUpdateStudent";
             this.groupBoxUpdateStudent.Padding = new System.Windows.Forms.Padding(4);
@@ -470,7 +472,7 @@
             this.groupBoxDeleteStudent.BackColor = System.Drawing.Color.Aqua;
             this.groupBoxDeleteStudent.Controls.Add(this.label1);
             this.groupBoxDeleteStudent.Controls.Add(this.btnDelete);
-            this.groupBoxDeleteStudent.Location = new System.Drawing.Point(887, 368);
+            this.groupBoxDeleteStudent.Location = new System.Drawing.Point(887, 411);
             this.groupBoxDeleteStudent.Name = "groupBoxDeleteStudent";
             this.groupBoxDeleteStudent.Size = new System.Drawing.Size(387, 164);
             this.groupBoxDeleteStudent.TabIndex = 3;
@@ -508,7 +510,7 @@
             this.groupBoxClearForm.BackColor = System.Drawing.Color.Aqua;
             this.groupBoxClearForm.Controls.Add(this.lblİnfo1);
             this.groupBoxClearForm.Controls.Add(this.btnClearForm);
-            this.groupBoxClearForm.Location = new System.Drawing.Point(887, 541);
+            this.groupBoxClearForm.Location = new System.Drawing.Point(887, 585);
             this.groupBoxClearForm.Name = "groupBoxClearForm";
             this.groupBoxClearForm.Size = new System.Drawing.Size(387, 164);
             this.groupBoxClearForm.TabIndex = 4;
@@ -540,12 +542,32 @@
             this.btnClearForm.UseVisualStyleBackColor = false;
             this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
+            // lblSearchInfo
+            // 
+            this.lblSearchInfo.AutoSize = true;
+            this.lblSearchInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblSearchInfo.Location = new System.Drawing.Point(678, 15);
+            this.lblSearchInfo.Name = "lblSearchInfo";
+            this.lblSearchInfo.Size = new System.Drawing.Size(192, 20);
+            this.lblSearchInfo.TabIndex = 5;
+            this.lblSearchInfo.Text = "Search students by name :";
+            // 
+            // tbxSearch
+            // 
+            this.tbxSearch.Location = new System.Drawing.Point(887, 12);
+            this.tbxSearch.Name = "tbxSearch";
+            this.tbxSearch.Size = new System.Drawing.Size(385, 27);
+            this.tbxSearch.TabIndex = 6;
+            this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            // 
             // frmStudentManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1284, 711);
+            this.ClientSize = new System.Drawing.Size(1284, 761);
+            this.Controls.Add(this.tbxSearch);
+            this.Controls.Add(this.lblSearchInfo);
             this.Controls.Add(this.groupBoxClearForm);
             this.Controls.Add(this.groupBoxDeleteStudent);
             this.Controls.Add(this.groupBoxUpdateStudent);
@@ -572,6 +594,7 @@
             this.groupBoxClearForm.ResumeLayout(false);
             this.groupBoxClearForm.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -618,5 +641,7 @@
         private System.Windows.Forms.Label lblIdUpdate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblİnfo1;
+        private System.Windows.Forms.Label lblSearchInfo;
+        private System.Windows.Forms.TextBox tbxSearch;
     }
 }
