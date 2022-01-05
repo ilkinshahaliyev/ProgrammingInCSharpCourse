@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudentManagement));
             this.dgwStudents = new System.Windows.Forms.DataGridView();
             this.groupBoxAddStudent = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.numericUpDownId = new System.Windows.Forms.NumericUpDown();
             this.lblId = new System.Windows.Forms.Label();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.groupBoxUpdateStudent = new System.Windows.Forms.GroupBox();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.numericUpDownIdUpdate = new System.Windows.Forms.NumericUpDown();
             this.lblIdUpdate = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -72,10 +74,12 @@
             this.btnClearForm = new System.Windows.Forms.Button();
             this.lblSearchInfo = new System.Windows.Forms.Label();
             this.tbxSearch = new System.Windows.Forms.TextBox();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dgwStudents)).BeginInit();
             this.groupBoxAddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).BeginInit();
             this.groupBoxUpdateStudent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIdUpdate)).BeginInit();
             this.groupBoxDeleteStudent.SuspendLayout();
             this.groupBoxClearForm.SuspendLayout();
@@ -97,6 +101,7 @@
             // groupBoxAddStudent
             // 
             this.groupBoxAddStudent.BackColor = System.Drawing.Color.Aqua;
+            this.groupBoxAddStudent.Controls.Add(this.label2);
             this.groupBoxAddStudent.Controls.Add(this.numericUpDownId);
             this.groupBoxAddStudent.Controls.Add(this.lblId);
             this.groupBoxAddStudent.Controls.Add(this.btnCreate);
@@ -119,16 +124,25 @@
             this.groupBoxAddStudent.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxAddStudent.Name = "groupBoxAddStudent";
             this.groupBoxAddStudent.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxAddStudent.Size = new System.Drawing.Size(431, 337);
+            this.groupBoxAddStudent.Size = new System.Drawing.Size(559, 337);
             this.groupBoxAddStudent.TabIndex = 1;
             this.groupBoxAddStudent.TabStop = false;
             this.groupBoxAddStudent.Text = "Add new student";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 260);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(110, 20);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "Profile image :";
             // 
             // numericUpDownId
             // 
             this.numericUpDownId.Location = new System.Drawing.Point(125, 27);
             this.numericUpDownId.Name = "numericUpDownId";
-            this.numericUpDownId.Size = new System.Drawing.Size(299, 27);
+            this.numericUpDownId.Size = new System.Drawing.Size(427, 27);
             this.numericUpDownId.TabIndex = 19;
             // 
             // lblId
@@ -160,7 +174,7 @@
             // 
             this.tbxAdress.Location = new System.Drawing.Point(125, 222);
             this.tbxAdress.Name = "tbxAdress";
-            this.tbxAdress.Size = new System.Drawing.Size(299, 27);
+            this.tbxAdress.Size = new System.Drawing.Size(427, 27);
             this.tbxAdress.TabIndex = 16;
             // 
             // radioButtonFemale
@@ -191,28 +205,28 @@
             // 
             this.tbxNationality.Location = new System.Drawing.Point(125, 159);
             this.tbxNationality.Name = "tbxNationality";
-            this.tbxNationality.Size = new System.Drawing.Size(299, 27);
+            this.tbxNationality.Size = new System.Drawing.Size(427, 27);
             this.tbxNationality.TabIndex = 13;
             // 
             // dtpDateOfBirth
             // 
             this.dtpDateOfBirth.Location = new System.Drawing.Point(125, 126);
             this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(299, 27);
+            this.dtpDateOfBirth.Size = new System.Drawing.Size(427, 27);
             this.dtpDateOfBirth.TabIndex = 12;
             // 
             // tbxSurname
             // 
             this.tbxSurname.Location = new System.Drawing.Point(125, 93);
             this.tbxSurname.Name = "tbxSurname";
-            this.tbxSurname.Size = new System.Drawing.Size(299, 27);
+            this.tbxSurname.Size = new System.Drawing.Size(427, 27);
             this.tbxSurname.TabIndex = 11;
             // 
             // tbxName
             // 
             this.tbxName.Location = new System.Drawing.Point(125, 60);
             this.tbxName.Name = "tbxName";
-            this.tbxName.Size = new System.Drawing.Size(299, 27);
+            this.tbxName.Size = new System.Drawing.Size(427, 27);
             this.tbxName.TabIndex = 10;
             // 
             // lblAdress
@@ -301,20 +315,29 @@
             this.groupBoxUpdateStudent.Controls.Add(this.lblDateOfBirthUpdate);
             this.groupBoxUpdateStudent.Controls.Add(this.lblSurnameUpdate);
             this.groupBoxUpdateStudent.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBoxUpdateStudent.Location = new System.Drawing.Point(449, 411);
+            this.groupBoxUpdateStudent.Location = new System.Drawing.Point(577, 411);
             this.groupBoxUpdateStudent.Margin = new System.Windows.Forms.Padding(4);
             this.groupBoxUpdateStudent.Name = "groupBoxUpdateStudent";
             this.groupBoxUpdateStudent.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBoxUpdateStudent.Size = new System.Drawing.Size(431, 337);
+            this.groupBoxUpdateStudent.Size = new System.Drawing.Size(559, 337);
             this.groupBoxUpdateStudent.TabIndex = 2;
             this.groupBoxUpdateStudent.TabStop = false;
             this.groupBoxUpdateStudent.Text = "Update student";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(1278, 53);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(341, 353);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 22;
+            this.pictureBox.TabStop = false;
             // 
             // numericUpDownIdUpdate
             // 
             this.numericUpDownIdUpdate.Location = new System.Drawing.Point(125, 27);
             this.numericUpDownIdUpdate.Name = "numericUpDownIdUpdate";
-            this.numericUpDownIdUpdate.Size = new System.Drawing.Size(299, 27);
+            this.numericUpDownIdUpdate.Size = new System.Drawing.Size(427, 27);
             this.numericUpDownIdUpdate.TabIndex = 21;
             // 
             // lblIdUpdate
@@ -346,7 +369,7 @@
             // 
             this.tbxAdressUpdate.Location = new System.Drawing.Point(125, 222);
             this.tbxAdressUpdate.Name = "tbxAdressUpdate";
-            this.tbxAdressUpdate.Size = new System.Drawing.Size(299, 27);
+            this.tbxAdressUpdate.Size = new System.Drawing.Size(427, 27);
             this.tbxAdressUpdate.TabIndex = 16;
             // 
             // radioButtonFemaleUpdate
@@ -377,28 +400,28 @@
             // 
             this.tbxNationalityUpdate.Location = new System.Drawing.Point(125, 159);
             this.tbxNationalityUpdate.Name = "tbxNationalityUpdate";
-            this.tbxNationalityUpdate.Size = new System.Drawing.Size(299, 27);
+            this.tbxNationalityUpdate.Size = new System.Drawing.Size(427, 27);
             this.tbxNationalityUpdate.TabIndex = 13;
             // 
             // dtpDateOfBirthUpdate
             // 
             this.dtpDateOfBirthUpdate.Location = new System.Drawing.Point(125, 126);
             this.dtpDateOfBirthUpdate.Name = "dtpDateOfBirthUpdate";
-            this.dtpDateOfBirthUpdate.Size = new System.Drawing.Size(299, 27);
+            this.dtpDateOfBirthUpdate.Size = new System.Drawing.Size(427, 27);
             this.dtpDateOfBirthUpdate.TabIndex = 12;
             // 
             // tbxSurnameUpdate
             // 
             this.tbxSurnameUpdate.Location = new System.Drawing.Point(125, 93);
             this.tbxSurnameUpdate.Name = "tbxSurnameUpdate";
-            this.tbxSurnameUpdate.Size = new System.Drawing.Size(299, 27);
+            this.tbxSurnameUpdate.Size = new System.Drawing.Size(427, 27);
             this.tbxSurnameUpdate.TabIndex = 11;
             // 
             // tbxNameUpdate
             // 
             this.tbxNameUpdate.Location = new System.Drawing.Point(125, 60);
             this.tbxNameUpdate.Name = "tbxNameUpdate";
-            this.tbxNameUpdate.Size = new System.Drawing.Size(299, 27);
+            this.tbxNameUpdate.Size = new System.Drawing.Size(427, 27);
             this.tbxNameUpdate.TabIndex = 10;
             // 
             // lblAdressUpdate
@@ -472,9 +495,9 @@
             this.groupBoxDeleteStudent.BackColor = System.Drawing.Color.Aqua;
             this.groupBoxDeleteStudent.Controls.Add(this.label1);
             this.groupBoxDeleteStudent.Controls.Add(this.btnDelete);
-            this.groupBoxDeleteStudent.Location = new System.Drawing.Point(887, 411);
+            this.groupBoxDeleteStudent.Location = new System.Drawing.Point(1143, 410);
             this.groupBoxDeleteStudent.Name = "groupBoxDeleteStudent";
-            this.groupBoxDeleteStudent.Size = new System.Drawing.Size(387, 164);
+            this.groupBoxDeleteStudent.Size = new System.Drawing.Size(476, 164);
             this.groupBoxDeleteStudent.TabIndex = 3;
             this.groupBoxDeleteStudent.TabStop = false;
             this.groupBoxDeleteStudent.Text = "Delete student";
@@ -485,9 +508,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(358, 40);
+            this.label1.Size = new System.Drawing.Size(441, 40);
             this.label1.TabIndex = 2;
-            this.label1.Text = "If you want to delete a student from the system, \r\nclick on the student and click" +
+            this.label1.Text = "If you want to delete a student from the system, click on the \r\nstudent and click" +
     " the \"Delete\" button";
             // 
             // btnDelete
@@ -497,7 +520,7 @@
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(281, 128);
+            this.btnDelete.Location = new System.Drawing.Point(370, 128);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(100, 30);
             this.btnDelete.TabIndex = 0;
@@ -510,9 +533,9 @@
             this.groupBoxClearForm.BackColor = System.Drawing.Color.Aqua;
             this.groupBoxClearForm.Controls.Add(this.lblİnfo1);
             this.groupBoxClearForm.Controls.Add(this.btnClearForm);
-            this.groupBoxClearForm.Location = new System.Drawing.Point(887, 585);
+            this.groupBoxClearForm.Location = new System.Drawing.Point(1143, 580);
             this.groupBoxClearForm.Name = "groupBoxClearForm";
-            this.groupBoxClearForm.Size = new System.Drawing.Size(387, 164);
+            this.groupBoxClearForm.Size = new System.Drawing.Size(476, 164);
             this.groupBoxClearForm.TabIndex = 4;
             this.groupBoxClearForm.TabStop = false;
             this.groupBoxClearForm.Text = "Clear Form";
@@ -523,9 +546,9 @@
             this.lblİnfo1.Font = new System.Drawing.Font("Segoe UI", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.lblİnfo1.Location = new System.Drawing.Point(6, 23);
             this.lblİnfo1.Name = "lblİnfo1";
-            this.lblİnfo1.Size = new System.Drawing.Size(360, 40);
+            this.lblİnfo1.Size = new System.Drawing.Size(444, 40);
             this.lblİnfo1.TabIndex = 1;
-            this.lblİnfo1.Text = "If you click the \"Clear form\" button, all elements \r\nin the form will be cleared." +
+            this.lblİnfo1.Text = "If you click the \"Clear form\" button, all elements in the form \r\nwill be cleared." +
     "";
             // 
             // btnClearForm
@@ -534,7 +557,7 @@
             this.btnClearForm.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClearForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClearForm.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnClearForm.Location = new System.Drawing.Point(281, 128);
+            this.btnClearForm.Location = new System.Drawing.Point(369, 128);
             this.btnClearForm.Name = "btnClearForm";
             this.btnClearForm.Size = new System.Drawing.Size(100, 30);
             this.btnClearForm.TabIndex = 0;
@@ -546,7 +569,7 @@
             // 
             this.lblSearchInfo.AutoSize = true;
             this.lblSearchInfo.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblSearchInfo.Location = new System.Drawing.Point(678, 15);
+            this.lblSearchInfo.Location = new System.Drawing.Point(1036, 15);
             this.lblSearchInfo.Name = "lblSearchInfo";
             this.lblSearchInfo.Size = new System.Drawing.Size(192, 20);
             this.lblSearchInfo.TabIndex = 5;
@@ -554,18 +577,23 @@
             // 
             // tbxSearch
             // 
-            this.tbxSearch.Location = new System.Drawing.Point(887, 12);
+            this.tbxSearch.Location = new System.Drawing.Point(1234, 12);
             this.tbxSearch.Name = "tbxSearch";
             this.tbxSearch.Size = new System.Drawing.Size(385, 27);
             this.tbxSearch.TabIndex = 6;
             this.tbxSearch.TextChanged += new System.EventHandler(this.tbxSearch_TextChanged);
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
             // 
             // frmStudentManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1284, 761);
+            this.ClientSize = new System.Drawing.Size(1624, 761);
+            this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.tbxSearch);
             this.Controls.Add(this.lblSearchInfo);
             this.Controls.Add(this.groupBoxClearForm);
@@ -588,6 +616,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
             this.groupBoxUpdateStudent.ResumeLayout(false);
             this.groupBoxUpdateStudent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIdUpdate)).EndInit();
             this.groupBoxDeleteStudent.ResumeLayout(false);
             this.groupBoxDeleteStudent.PerformLayout();
@@ -643,5 +672,8 @@
         private System.Windows.Forms.Label lblİnfo1;
         private System.Windows.Forms.Label lblSearchInfo;
         private System.Windows.Forms.TextBox tbxSearch;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.PictureBox pictureBox;
     }
 }

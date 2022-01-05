@@ -15,5 +15,11 @@ namespace Task1
         public string? Nationality { get; set; }
         public string? Gender { get; set; }
         public string? Adress { get; set; }
+        public string? ProfileImageLocation { get; set; }
+
+        public Student()
+        {
+            ProfileImageLocation = @"C:\Users\ilkin\Downloads\defaultProfileImage.png";
+        }
     }
 }

@@ -33,7 +33,8 @@ namespace Task1
                     DateOfBirth = Convert.ToDateTime(sqlDataReader["DateOfBirth"]),
                     Nationality = sqlDataReader["Nationality"].ToString(),
                     Gender = sqlDataReader["Gender"].ToString(),
-                    Adress = sqlDataReader["Adress"].ToString()
+                    Adress = sqlDataReader["Adress"].ToString(),
+                    ProfileImageLocation = sqlDataReader["ProfileImage"].ToString()
                 };
 
                 students.Add(student);
@@ -49,7 +50,7 @@ namespace Task1
         {
             ConnectionControl();
 
-            SqlCommand sqlCommand = new SqlCommand("Insert into Students values(@id, @name, @surname, @dateOfBirth, @nationality, @gender, @adress)", _sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("Insert into Students values(@id, @name, @surname, @dateOfBirth, @nationality, @gender, @adress, @profileImage)", _sqlConnection);
             sqlCommand.Parameters.AddWithValue("@id", student.Id);
             sqlCommand.Parameters.AddWithValue("@name", student.Name);
             sqlCommand.Parameters.AddWithValue("@surname", student.Surname);
@@ -57,6 +58,7 @@ namespace Task1
             sqlCommand.Parameters.AddWithValue("@nationality", student.Nationality);
             sqlCommand.Parameters.AddWithValue("@gender", student.Gender);
             sqlCommand.Parameters.AddWithValue("@adress", student.Adress);
+            sqlCommand.Parameters.AddWithValue("@profileImage", student.ProfileImageLocation);
 
             sqlCommand.ExecuteNonQuery();
 
@@ -67,7 +69,7 @@ namespace Task1
         {
             ConnectionControl();
 
-            SqlCommand sqlCommand = new SqlCommand("Update Students set Name = @name, Surname = @surname, DateOfBirth = @dateOfBirth, Nationality = @nationality, Gender = @gender, Adress = @adress where Id = @id", _sqlConnection);
+            SqlCommand sqlCommand = new SqlCommand("Update Students set Name = @name, Surname = @surname, DateOfBirth = @dateOfBirth, Nationality = @nationality, Gender = @gender, Adress = @adress, ProfileImage = @profileImage where Id = @id", _sqlConnection);
             sqlCommand.Parameters.AddWithValue("@name", student.Name);
             sqlCommand.Parameters.AddWithValue("@surname", student.Surname);
             sqlCommand.Parameters.AddWithValue("@dateOfBirth", student.DateOfBirth);
@@ -75,6 +77,7 @@ namespace Task1
             sqlCommand.Parameters.AddWithValue("@gender", student.Gender);
             sqlCommand.Parameters.AddWithValue("@adress", student.Adress);
             sqlCommand.Parameters.AddWithValue("@id", student.Id);
+            sqlCommand.Parameters.AddWithValue("@profileImage", student.ProfileImageLocation);
 
             sqlCommand.ExecuteNonQuery();
 

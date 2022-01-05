@@ -43,6 +43,15 @@ namespace Task1
                 student.Gender = radioButtonFemale.Text;
             }
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                student.ProfileImageLocation = openFileDialog.FileName.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No profile picture selected. Default profile picture added.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
             _studentManager.Add(student);
 
             LoadStudents();
@@ -73,6 +82,8 @@ namespace Task1
             }
 
             tbxAdressUpdate.Text = dgwStudents.CurrentRow.Cells[6].Value.ToString();
+
+            pictureBox.ImageLocation = dgwStudents.CurrentRow.Cells[7].Value.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -94,6 +105,16 @@ namespace Task1
             else if (radioButtonFemaleUpdate.Checked == true)
             {
                 student.Gender = radioButtonFemaleUpdate.Text;
+            }
+
+            openFileDialog.ShowDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                student.ProfileImageLocation = openFileDialog.FileName.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Profile Image updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             _studentManager.Update(student);
@@ -159,7 +180,7 @@ namespace Task1
             }
             else
             {
-                ListStudentByName(tbxSearch.Text);
+                ListStudentByName(key);
             }
         }
     }
