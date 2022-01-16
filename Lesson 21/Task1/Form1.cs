@@ -107,7 +107,6 @@ namespace Task1
                 student.Gender = radioButtonFemaleUpdate.Text;
             }
 
-            openFileDialog.ShowDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 student.ProfileImageLocation = openFileDialog.FileName.ToString();
