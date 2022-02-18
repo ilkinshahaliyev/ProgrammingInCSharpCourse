@@ -49,7 +49,6 @@
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.lblSurname = new System.Windows.Forms.Label();
             this.groupBoxUpdateStudent = new System.Windows.Forms.GroupBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.numericUpDownIdUpdate = new System.Windows.Forms.NumericUpDown();
             this.lblIdUpdate = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -66,6 +65,7 @@
             this.lblNameUpdate = new System.Windows.Forms.Label();
             this.lblDateOfBirthUpdate = new System.Windows.Forms.Label();
             this.lblSurnameUpdate = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.groupBoxDeleteStudent = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -79,8 +79,8 @@
             this.groupBoxAddStudent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).BeginInit();
             this.groupBoxUpdateStudent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIdUpdate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.groupBoxDeleteStudent.SuspendLayout();
             this.groupBoxClearForm.SuspendLayout();
             this.SuspendLayout();
@@ -324,15 +324,6 @@
             this.groupBoxUpdateStudent.TabStop = false;
             this.groupBoxUpdateStudent.Text = "Update student";
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Location = new System.Drawing.Point(1278, 53);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(341, 353);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox.TabIndex = 22;
-            this.pictureBox.TabStop = false;
-            // 
             // numericUpDownIdUpdate
             // 
             this.numericUpDownIdUpdate.Location = new System.Drawing.Point(125, 27);
@@ -490,6 +481,15 @@
             this.lblSurnameUpdate.TabIndex = 4;
             this.lblSurnameUpdate.Text = "Surname :";
             // 
+            // pictureBox
+            // 
+            this.pictureBox.Location = new System.Drawing.Point(1278, 53);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(341, 353);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox.TabIndex = 22;
+            this.pictureBox.TabStop = false;
+            // 
             // groupBoxDeleteStudent
             // 
             this.groupBoxDeleteStudent.BackColor = System.Drawing.Color.Aqua;
@@ -616,8 +616,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownId)).EndInit();
             this.groupBoxUpdateStudent.ResumeLayout(false);
             this.groupBoxUpdateStudent.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIdUpdate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.groupBoxDeleteStudent.ResumeLayout(false);
             this.groupBoxDeleteStudent.PerformLayout();
             this.groupBoxClearForm.ResumeLayout(false);
